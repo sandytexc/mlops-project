@@ -36,6 +36,7 @@ cd first-mlops-project
 ### 2. Create Virtual Environment
 
 ```
+apt install python3.12-venv
 python3 -m venv .mlops
 source .mlops/bin/activate
 ```
