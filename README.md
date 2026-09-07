@@ -84,10 +84,24 @@ docker build -t diabetes-prediction-model .
 ```
 docker run -p 8000:8000 diabetes-prediction-model
 ```
+### Push the image to docker hub
 
+```
+docker login -u sandytexc
+docker tag diabetes-prediction-model:latest sandytexc/diabetes-prediction-model:latest
+docker push sandytexc/diabetes-prediction-model:latest
+```
 ## Deploy to Kubernetes
 
 ```
 kubectl apply -f diabetes-prediction-model-deployment.yaml
 ```
+
+## Port Forward
+
+```
+k port-forward svc/diabetes-api-service 1111:80 --address=0.0.0.0
+```
+
+
 
